@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shot&Cut</title>
+
+    <link rel="stylesheet" href="css/common.css" media="all">
+
+    <script src="js/libs/jquery-3.2.1.min.js"></script>
+    <script src="js/libs/phone-mask.js"></script>
+    <script src="js/libs/slick.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/pages/contact.js"></script>
+
+</head>
+<body>
+
+    <header class="js-header b-header b-header__center">
+        <div class="u-clear-fix b-wrapper">
+            <a href="index.html" class="b-logo"></a>
+            <div class="b-button__box">
+                <a href="#" class="js-call-calc b-button">
+                    <span>Расчитать Стоимость</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="js-page-bar b-page-bar b-page-bar_l b-page-bar__hide">
+        <a href="#" class="js-call-menu b-menu-call">menu</a>
+        <a href="#" class="js-scroll-top b-scroll-top hidden">Наверх</a>
+    </div>
+    <div class="js-menu-overlay b-menu-overlay"></div>
+    <div class="b-menu__box">
+        <a href="#" class="b-menu__logo"></a>
+        <ul class="b-menu">
+            <li>
+                <a href="#">Работы</a>
+            </li>
+            <li>
+                <a href="#">О нас</a>
+            </li>
+            <li>
+                <a href="#">Бриф онлайн</a>
+            </li>
+            <li>
+                <a href="#">Блог</a>
+            </li>
+            <li>
+                <a href="#" class="active">Контакты</a>
+            </li>
+        </ul>
+        <div class="b-menu__footer">
+            <p>
+                <a href="tel:+79788441932">+7 (978) 844 19 32</a>
+            </p>
+            <p>
+                <a href="mailto:shotncut.film@gmail.com">shotncut.film@gmail.com</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="js-page-bar b-page-bar b-page-bar_r b-page-bar__hide">
+        <div class="b-social__box">
+            <ul class="u-clear-fix b-social">
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Facebook</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Youtube</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Vimeo</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Instagram</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="js-content b-content">
+
+        <section class="b-top__section b-contact__section">
+            <div class="b-wrapper">
+                <div class="b-contact__top b-text">
+                    <h1>Мы всегда рады вам</h1>
+                    <p>
+                        Если для вашего проекта необходим видеооператор в Крыму, Москве или Санкт-Петербурге, мы всегда открыты
+                        к сотрудничеству.
+                    </p>
+                </div>
+                <div class="u-clear-fix b-contact__column">
+                    <div class="b-contact-links__box">
+                        <h5>Наши контакты</h5>
+                        <ul class="b-contact-links">
+                            <li class="b-contact-links__email">
+                                <a href="mailto:shotncutfilm@gmail.com">shotncutfilm@gmail.com</a>
+                            </li>
+                            <li class="b-contact-links__phone">
+                                <a href="tel:+79788441932">+7 (978) 844 19 32</a>
+                            </li>
+                            <li class="b-contact-links__address">
+                                <span>
+                                    Республика&nbsp;Крым, г.Симферополь, ул.&nbsp;Данилова,&nbsp;43
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="b-contact-form__box">
+                        <h5>Напишите нам</h5>
+                        <form action="http://index.php" class="js-contact-form b-contact-form" id="contact_form" autocomplete="off">
+                            <div class="u-clear-fix b-contact-form__column">
+                                <input type="text" id="contact_name" name="contact[name]" class="js-required b-input" placeholder="Ваше имя">
+                                <input type="email" id="contact_email" name="contact[email]" class="js-required b-input email" placeholder="Ваш Email">
+                            </div>
+                            <textarea id="contact_text" name="contact[text]" class="js-required b-input" placeholder="Ваше сообщение"></textarea>
+                            <div class="b-button__box">
+                                <button type="submit" class="b-button" disabled>Отправить</button>
+                            </div>
+                        </form>
+                        <div class="js-contact-form-error b-contact-form__alert hidden">
+                            Возникла ошибка.<br>Повторите попытку позже.
+                        </div>
+                        <h6 class="js-contact-form-success b-contact-form__alert hidden">
+                            Спасибо!<br>В ближайшее время мы свяжемся с вами.
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="b-footer">
+        <div class="u-clear-fix b-wrapper">
+            <div class="b-footer__logo">
+                <a href="/"></a>
+            </div>
+            <div class="b-footer__contact">
+                <a href="tel:+79788441932">+7 (978) 844 19 32</a>
+                <span>Симферополь, ул. Данилова 43</span>
+                <p>
+                    <a href="mailto:shotncut.film@gmail.com">shotncut.film@gmail.com</a>
+                </p>
+            </div>
+            <div class="b-button__box">
+                <a href="#" class="js-call-calc b-button">
+                    <span>Расчитать Стоимость</span>
+                    <p>Ознакомиться с услугами и узнать стоимость</p>
+                </a>
+            </div>
+            <ul class="u-clear-fix b-social">
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Facebook</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Youtube</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Vimeo</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Instagram</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+</body>
+</html>
+

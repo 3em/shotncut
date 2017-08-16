@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shot&Cut</title>
+
+    <link rel="stylesheet" href="css/common.css" media="all">
+
+    <script src="js/libs/jquery-3.2.1.min.js"></script>
+    <script src="js/libs/phone-mask.js"></script>
+    <script src="js/libs/slick.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/pages/index.js"></script>
+
+</head>
+<body>
+
+    <div class="js-index-bg b-index-bg__box">
+        <div class="b-index-bg">
+            <video loop autoplay muted controls="true" width='100%' height='100%' id="indexVideo" poster="" class="b-index-bg__video">
+                <source src="video/index.webm" type="video/webm; codecs=&quot;vp8, vorbis&quot;">
+                <source type="video/mp4" src="video/index.mp4">
+            </video>
+        </div>
+    </div>
+
+    <header class="js-header b-header b-header__center">
+        <div class="u-clear-fix b-wrapper">
+            <a href="index.html" class="b-logo"></a>
+            <div class="b-button__box">
+                <a href="#" class="js-call-calc b-button">
+                    <span>Расчитать Стоимость</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="js-page-bar b-page-bar b-page-bar_l b-page-bar__hide">
+        <a href="#" class="js-call-menu b-menu-call">menu</a>
+        <a href="#" class="js-scroll-top b-scroll-top hidden">Наверх</a>
+    </div>
+    <div class="js-menu-overlay b-menu-overlay"></div>
+    <div class="b-menu__box">
+        <a href="#" class="b-menu__logo"></a>
+        <ul class="b-menu">
+            <li>
+                <a href="#">Работы</a>
+            </li>
+            <li>
+                <a href="#">О нас</a>
+            </li>
+            <li>
+                <a href="#">Бриф онлайн</a>
+            </li>
+            <li>
+                <a href="#">Блог</a>
+            </li>
+            <li>
+                <a href="#">Контакты</a>
+            </li>
+        </ul>
+        <div class="b-menu__footer">
+            <p>
+                <a href="tel:+79788441932">+7 (978) 844 19 32</a>
+            </p>
+            <p>
+                <a href="mailto:shotncut.film@gmail.com">shotncut.film@gmail.com</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="js-page-bar b-page-bar b-page-bar_r b-page-bar__hide">
+        <div class="b-social__box">
+            <ul class="u-clear-fix b-social">
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Facebook</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Youtube</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Vimeo</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Instagram</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <a href="#" class="js-index-scroll b-index-scroll">
+        Подробнее
+        <span class="b-index-scroll__i"></span>
+    </a>
+
+    <div class="js-content b-content">
+        <div class="js-index-marker"></div>
+
+        <section class="js-index-title js-window-height b-index-title">
+            <div class="b-wrapper">
+                <div class="b-title">
+                    <h1>Продакшн студия</h1>
+                    <p>Корпоративное, вирусное и рекламное видео для компаний из России, Англии, США и Европы.</p>
+                </div>
+            </div>
+        </section>
+        <div class="js-bg-animation-stop"></div>
+
+        <section class="b-index-product__section">
+            <div class="b-wrapper">
+                <div class="js-index-product-box u-clear-fix b-index-product__box">
+                    <a href="#" class="js-index-product b-index-product fashion">
+                        <div class="b-index-product__line b-index-product__line_1"></div>
+                        <div class="b-index-product__line b-index-product__line_2"></div>
+                        <div class="b-index-product__line b-index-product__line_3"></div>
+                        <div class="b-index-product__line b-index-product__line_4"></div>
+                        <div class="b-index-product__text">
+                            <h4>Fashion</h4>
+                            <p>Текст который будет описывать данный топик</p>
+                        </div>
+                    </a>
+                    <a href="#" class="js-index-product b-index-product long documentary">
+                        <div class="b-index-product__line b-index-product__line_1"></div>
+                        <div class="b-index-product__line b-index-product__line_2"></div>
+                        <div class="b-index-product__line b-index-product__line_3"></div>
+                        <div class="b-index-product__line b-index-product__line_4"></div>
+                        <div class="b-index-product__text">
+                            <h4>Корпоративное видео</h4>
+                            <p>Текст который будет описывать данный топик</p>
+                        </div>
+                    </a>
+                    <a href="#" class="js-index-product b-index-product food">
+                        <div class="b-index-product__line b-index-product__line_1"></div>
+                        <div class="b-index-product__line b-index-product__line_2"></div>
+                        <div class="b-index-product__line b-index-product__line_3"></div>
+                        <div class="b-index-product__line b-index-product__line_4"></div>
+                        <div class="b-index-product__text">
+                            <h4>Food</h4>
+                            <p>Текст который будет описывать данный топик</p>
+                        </div>
+                    </a>
+                    <a href="#" class="js-index-product b-index-product long air">
+                        <div class="b-index-product__line b-index-product__line_1"></div>
+                        <div class="b-index-product__line b-index-product__line_2"></div>
+                        <div class="b-index-product__line b-index-product__line_3"></div>
+                        <div class="b-index-product__line b-index-product__line_4"></div>
+                        <div class="b-index-product__text">
+                            <h4>АЭРОСЪЕМКА</h4>
+                            <p>Текст который будет описывать данный топик</p>
+                        </div>
+                    </a>
+                    <a href="#" class="js-index-product b-index-product advertising">
+                        <div class="b-index-product__line b-index-product__line_1"></div>
+                        <div class="b-index-product__line b-index-product__line_2"></div>
+                        <div class="b-index-product__line b-index-product__line_3"></div>
+                        <div class="b-index-product__line b-index-product__line_4"></div>
+                        <div class="b-index-product__text">
+                            <h4>Реклама</h4>
+                            <p>Текст который будет описывать данный топик</p>
+                        </div>
+                    </a>
+                    <a href="#" class="js-index-product b-index-product all">
+                        <div class="b-index-product__line b-index-product__line_1"></div>
+                        <div class="b-index-product__line b-index-product__line_2"></div>
+                        <div class="b-index-product__line b-index-product__line_3"></div>
+                        <div class="b-index-product__line b-index-product__line_4"></div>
+                        <div class="b-index-product__text">
+                            <h4>Все Работы</h4>
+                            <p>Текст который будет описывать данный топик</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="js-clients-section b-clients__section">
+            <div class="b-wrapper">
+                <h2>Наши клиенты</h2>
+                <div class="js-clients-carousel b-clients-carousel">
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-1.png" alt="Floris">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-2.png" alt="Wilmax England">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-3.png" alt="Checkroom">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-4.svg" alt="Простокосмос">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-5.png" alt="De sent daniel">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-6.png" alt="Brow bar">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-7.png" alt="Red wine design">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-8.png" alt="Hook">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-9.png" alt="Сделано руками">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-10.png" alt="Wine room">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-11.png" alt="Stylpasta">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-12.png" alt="Fuga">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-13.png" alt="Rакета">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-14.png" alt="Shark taxi">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-15.png" alt="Just wok">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="b-clients-carousel__item">
+                        <div class="b-table">
+                            <a href="#">
+                                <img src="i/clients/client-16.svg" alt="Treblab">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="js-clients-bg b-clients__bg"></div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="b-footer">
+        <div class="u-clear-fix b-wrapper">
+            <div class="b-footer__logo">
+                <a href="/"></a>
+            </div>
+            <div class="b-footer__contact">
+                <a href="tel:+79788441932">+7 (978) 844 19 32</a>
+                <span>Симферополь, ул. Данилова 43</span>
+                <p>
+                    <a href="mailto:shotncut.film@gmail.com">shotncut.film@gmail.com</a>
+                </p>
+            </div>
+            <div class="b-button__box">
+                <a href="#" class="js-call-calc b-button">
+                    <span>Расчитать Стоимость</span>
+                    <p>Ознакомиться с услугами и узнать стоимость</p>
+                </a>
+            </div>
+            <ul class="u-clear-fix b-social">
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Facebook</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Youtube</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Vimeo</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" class="b-social__link">Instagram</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+</body>
+</html>
+
