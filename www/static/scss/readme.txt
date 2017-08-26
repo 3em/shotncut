@@ -1,1 +1,1 @@
-sass --compass --watch /Work/ShotAndCut/scss/common.scss://Work/ShotAndCut/css/common.css
+sass --compass --watch /Work/shotncut/www/static/scss/common.scss://Work/shotncut/www/static/css/common.css

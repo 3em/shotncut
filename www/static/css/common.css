@@ -333,9 +333,9 @@ a {
   color: #fff;
   text-decoration: none;
   transition: color .25s; }
-  .b-link .b-link_dashed {
+  .b-link.b-link_dashed {
     font-size: 50%; }
-    .b-link .b-link_dashed .b-link__text {
+    .b-link.b-link_dashed .b-link__text {
       font-size: 200%;
       padding: 0.3em 0 0;
       border-bottom: 1px dashed rgba(255, 255, 255, 0.5); }
@@ -362,7 +362,7 @@ a {
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: transparent;
-  transition: border-color .25s, color .25s;
+  transition: border-color .25s, color .25s, background .25s;
   cursor: pointer; }
   .b-button:hover {
     border-color: #fff;
@@ -371,6 +371,14 @@ a {
     height: 42px;
     padding: 4px 18px 8px;
     text-transform: none; }
+  .b-button.b-button_white {
+    background: #fff;
+    border-color: transparent;
+    color: #000; }
+    .b-button.b-button_white:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: transparent;
+      color: #fff; }
   .b-button[disabled] {
     color: rgba(255, 255, 255, 0.1) !important;
     border-color: rgba(255, 255, 255, 0.1);
@@ -1149,6 +1157,67 @@ input[type=number]::-webkit-outer-spin-button {
     background-size: 100% auto; }
   .b-navigator__next:hover {
     opacity: .8; }
+
+.b-checkbox {
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  margin-bottom: 20px; }
+  .b-checkbox input {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    left: -100%;
+    top: 0; }
+    .b-checkbox input:checked + label .b-checkbox__i {
+      border-color: #fff; }
+      .b-checkbox input:checked + label .b-checkbox__i:before, .b-checkbox input:checked + label .b-checkbox__i:after {
+        opacity: 1; }
+  .b-checkbox label {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 30px;
+    transition: color .25s;
+    cursor: pointer; }
+    .b-checkbox label:hover {
+      color: rgba(255, 255, 255, 0.6); }
+      .b-checkbox label:hover .b-checkbox__i {
+        border-color: rgba(255, 255, 255, 0.6); }
+  .b-checkbox .b-checkbox__i {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: border-color .25s, opacity .25s; }
+    .b-checkbox .b-checkbox__i:after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: -1px;
+      background: #000;
+      width: 6px;
+      height: 8px;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity .25s; }
+    .b-checkbox .b-checkbox__i:before {
+      content: "";
+      position: absolute;
+      right: -4px;
+      top: -4px;
+      width: 17px;
+      height: 15px;
+      background: url("../i/i-checkbox.png") no-repeat;
+      background-size: cover;
+      opacity: 0;
+      z-index: 2;
+      transition: opacity .25s; }
 
 @media only screen and (max-width: 1130px) {
   .b-footer__contact span {
@@ -2261,5 +2330,328 @@ textarea.b-input {
   .b-contact-form .b-button {
     text-align: center;
     width: 100%; } }
+.b-popup__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(18, 18, 18, 0.9);
+  z-index: 100;
+  display: none; }
+
+.b-popup__close {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  top: 50px;
+  right: 25px;
+  z-index: 5; }
+  .b-popup__close:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    background: url("../i/calc/i-popup-close.png") no-repeat;
+    background-size: cover;
+    transition: transform .15s; }
+  .b-popup__close:hover:before {
+    transform: scale(1.5); }
+
+.b-popup {
+  position: relative;
+  margin: 50px 110px;
+  background: #000;
+  z-index: 2;
+  box-shadow: 0 0 105px black;
+  overflow: scroll; }
+
+.b-popup__first {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 20px;
+  line-height: 31px;
+  padding: 115px 30px;
+  width: 100%; }
+  .b-popup__first:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-bottom: 90px;
+    margin-left: -50px;
+    width: 101px;
+    height: 40px;
+    background: url(../i/logo.svg) no-repeat;
+    background-size: cover; }
+  .b-popup__first h2 {
+    font-size: 61px;
+    line-height: 70px;
+    margin-bottom: 0; }
+  .b-popup__first .b-button__box {
+    margin-top: 27px; }
+    .b-popup__first .b-button__box .b-button {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 7px;
+      min-width: 240px; }
+
+.b-calc__box {
+  position: relative;
+  min-height: 100%;
+  display: table;
+  width: 100%; }
+
+.b-calc__sidebar {
+  display: table-cell;
+  vertical-align: top;
+  width: 35%;
+  box-sizing: border-box;
+  min-height: 100%;
+  padding: 55px 45px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1); }
+  .b-calc__sidebar .b-calc__sidebar-price {
+    position: relative;
+    margin-bottom: 65px; }
+  .b-calc__sidebar .b-calc__sidebar-price_price {
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 5px; }
+  .b-calc__sidebar .b-calc__sidebar-price_label {
+    opacity: .3;
+    font-size: 12px; }
+
+.b-calc__nav_box {
+  position: relative;
+  border-left: 1px solid rgba(255, 255, 255, 0.1); }
+  .b-calc__nav_box:before, .b-calc__nav_box:after {
+    content: "";
+    position: absolute;
+    left: -1px;
+    width: 2px; }
+  .b-calc__nav_box:before {
+    height: 25px;
+    bottom: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,0.1+100 */
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#1affffff',GradientType=0 );
+    /* IE6-9 */ }
+  .b-calc__nav_box:after {
+    height: 50px;
+    top: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.1+0,0+100 */
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1affffff', endColorstr='#00ffffff',GradientType=0 );
+    /* IE6-9 */ }
+
+.b-calc__sidebar_scheme {
+  margin-left: 24px; }
+
+.b-calc__nav {
+  position: relative;
+  margin-bottom: 55px; }
+  .b-calc__nav li {
+    padding: 16px 0; }
+    .b-calc__nav li:first-child {
+      padding-top: 12px; }
+  .b-calc__nav .b-calc__nav_link {
+    padding: 4px 0 4px 24px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    color: rgba(255, 255, 255, 0.3); }
+    .b-calc__nav .b-calc__nav_link.b-calc__nav_link-1:before {
+      background: url("../i/calc/i-step-1.png") no-repeat; }
+    .b-calc__nav .b-calc__nav_link.b-calc__nav_link-2:before {
+      background: url("../i/calc/i-step-2.png") no-repeat; }
+    .b-calc__nav .b-calc__nav_link.b-calc__nav_link-3:before {
+      width: 24px;
+      height: 13px;
+      margin-right: -12px;
+      background: url("../i/calc/i-step-3.png") no-repeat; }
+    .b-calc__nav .b-calc__nav_link.b-calc__nav_link-4:before {
+      width: 21px;
+      height: 21px;
+      background: url("../i/calc/i-step-4.png") no-repeat; }
+    .b-calc__nav .b-calc__nav_link.b-calc__nav_link-5:before {
+      width: 18px;
+      height: 18px;
+      background: url("../i/calc/i-step-5.png") no-repeat; }
+    .b-calc__nav .b-calc__nav_link:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      right: 100%;
+      z-index: 2;
+      opacity: .3;
+      transition: opacity .25s;
+      width: 20px;
+      margin-right: -10px;
+      height: 20px;
+      background-size: cover !important; }
+    .b-calc__nav .b-calc__nav_link:after {
+      content: "";
+      position: absolute;
+      left: -1px;
+      width: 2px;
+      top: 0;
+      bottom: 0;
+      background: #000;
+      z-index: 1; }
+    .b-calc__nav .b-calc__nav_link:hover {
+      color: rgba(255, 255, 255, 0.5); }
+      .b-calc__nav .b-calc__nav_link:hover:before {
+        opacity: .5; }
+    .b-calc__nav .b-calc__nav_link.active {
+      color: #fff;
+      cursor: default; }
+      .b-calc__nav .b-calc__nav_link.active:before {
+        opacity: 1; }
+    .b-calc__nav .b-calc__nav_link.disabled {
+      cursor: default;
+      color: rgba(255, 255, 255, 0.2) !important;
+      color: #fff; }
+      .b-calc__nav .b-calc__nav_link.disabled:before {
+        opacity: .2 !important; }
+
+.b-calc {
+  display: table-cell;
+  vertical-align: middle;
+  width: 65%;
+  position: relative; }
+
+.b-calc__wrapper {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  padding: 55px 15%;
+  box-sizing: border-box;
+  text-align: center; }
+
+.b-calc_steps {
+  font-size: 20px;
+  line-height: 30px;
+  color: #2b2b2b;
+  margin-bottom: 8px; }
+  .b-calc_steps span {
+    color: #fff; }
+
+.b-calc__item_box h2 {
+  margin-bottom: 70px;
+  font-size: 42px;
+  line-height: 50px; }
+.b-calc__item_box .b-input {
+  text-align: center;
+  background: none !important;
+  border-radius: 0;
+  border-bottom: 1px solid #fff;
+  padding-left: 0;
+  padding-right: 0; }
+
+.b-calc__arrows {
+  position: relative;
+  margin-top: 100px;
+  font-size: 0;
+  line-height: 0; }
+  .b-calc__arrows a {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 70px;
+    height: 60px;
+    box-sizing: border-box;
+    margin: 0 10px; }
+    .b-calc__arrows a:before {
+      content: "";
+      position: absolute;
+      width: 40px;
+      left: 50%;
+      margin-left: -20px;
+      top: 0;
+      bottom: 0; }
+    .b-calc__arrows a.b-calc__arrows_l {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: border-color .25s; }
+      .b-calc__arrows a.b-calc__arrows_l:before {
+        background: url("../i/arrow.svg") no-repeat center;
+        background-size: 100% auto;
+        transform: rotate(180deg);
+        opacity: .3;
+        transition: opacity .25s; }
+      .b-calc__arrows a.b-calc__arrows_l:hover {
+        border-color: #fff; }
+        .b-calc__arrows a.b-calc__arrows_l:hover:before {
+          opacity: 1; }
+    .b-calc__arrows a.b-calc__arrows_r {
+      background: #fff;
+      transition: background .25s; }
+      .b-calc__arrows a.b-calc__arrows_r:before {
+        background: url("../i/arrow-black.svg") no-repeat center;
+        background-size: 100% auto; }
+      .b-calc__arrows a.b-calc__arrows_r:hover {
+        background: rgba(255, 255, 255, 0.5); }
+      .b-calc__arrows a.b-calc__arrows_r.disabled {
+        opacity: .5;
+        background: #fff; }
+
+.b-calc-other {
+  margin-left: 30px;
+  margin-bottom: -50px;
+  margin-top: -20px; }
+  .b-calc-other + .b-checkbox {
+    margin-top: 100px; }
+  .b-calc-other.visibility {
+    visibility: hidden;
+    opacity: 0; }
+    .b-calc-other.visibility + .b-checkbox {
+      margin-top: 0; }
+  .b-calc-other.b-calc-other_hide.visibility {
+    display: none; }
+  .b-calc-other .b-input {
+    text-align: left; }
+
+.b-slider__box {
+  position: relative; }
+  .b-slider__box .ui-widget.ui-widget-content {
+    border: none;
+    background: rgba(255, 255, 255, 0.3);
+    height: 4px;
+    border-radius: 2px; }
+  .b-slider__box .ui-widget-header {
+    background: #fff; }
+  .b-slider__box .ui-slider-handle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fff;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    margin-left: -10px;
+    top: -10px;
+    outline: none;
+    cursor: pointer; }
+  .b-slider__box .b-slider__text {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    display: block; }
 
 /*# sourceMappingURL=common.css.map */

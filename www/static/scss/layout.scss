@@ -71,7 +71,7 @@ a{
   text-decoration: none;
   transition: color .25s;
 
-  .b-link_dashed{
+  &.b-link_dashed{
     font-size: 50%;
 
     .b-link__text{
@@ -106,7 +106,7 @@ a{
   text-transform: uppercase;
   border: 1px solid rgba(255,255,255, .1);
   background: transparent;
-  transition: border-color .25s, color .25s;
+  transition: border-color .25s, color .25s, background .25s;
   cursor: pointer;
 
   &:hover{
@@ -118,6 +118,18 @@ a{
     height: 42px;
     padding: 4px 18px 8px;
     text-transform: none;
+  }
+
+  &.b-button_white{
+    background: #fff;
+    border-color: transparent;
+    color: #000;
+
+    &:hover{
+      background: rgba(255,255,255, .1);
+      border-color: transparent;
+      color: #fff;
+    }
   }
 
   &[disabled]{
@@ -1137,6 +1149,89 @@ input[type=number]::-webkit-outer-spin-button {
 
   &:hover{
     opacity: .8;
+  }
+}
+
+.b-checkbox{
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  margin-bottom: 20px;
+
+  input{
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    left: -100%;
+    top: 0;
+
+    &:checked + label {
+      .b-checkbox__i{
+        border-color: #fff;
+
+        &:before,
+        &:after{
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  label{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 30px;
+    transition: color .25s;
+    cursor: pointer;
+
+    &:hover{
+      color: rgba(255,255,255, .6);
+
+      .b-checkbox__i{
+        border-color: rgba(255,255,255, .6)
+      }
+    }
+  }
+
+  .b-checkbox__i{
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255,255,255, .3);
+    transition: border-color .25s, opacity .25s;
+
+    &:after{
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: -1px;
+      background: #000;
+      width: 6px;
+      height: 8px;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity .25s;
+    }
+
+    &:before{
+      content: "";
+      position: absolute;
+      right: -4px;
+      top: -4px;
+      width: 17px;
+      height: 15px;
+      background: url("../i/i-checkbox.png") no-repeat;
+      background-size: cover;
+      opacity: 0;
+      z-index: 2;
+      transition: opacity .25s;
+    }
   }
 }
 
