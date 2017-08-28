@@ -132,10 +132,17 @@ a{
     }
   }
 
-  &[disabled]{
+  &[disabled],
+  &.disabled{
     color: rgba(255,255,255, .1) !important;
     border-color: rgba(255,255,255, .1);
     cursor: default;
+
+    &.b-button_white{
+      background: rgba(255,255,255, .1) !important;
+      border-color: transparent;
+      color: #000;
+    }
   }
 
 }

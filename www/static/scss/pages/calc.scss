@@ -6,7 +6,20 @@
   bottom: 0;
   background: rgba(18,18,18, .9);
   z-index: 100;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .25s, opacity .25s;
+
+  &.open{
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity .25s;
+
+    .b-popup{
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }
 
 .b-popup__close{
@@ -45,6 +58,9 @@
   z-index: 2;
   box-shadow: 0 0 105px rgba(0,0,0, 71);
   overflow: scroll;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform .45s .15s, opacity .45s .15s;
 }
 
 .b-popup__first{
@@ -282,11 +298,54 @@
     color: #fff;
   }
 }
+.b-calc__item{
+  position: relative;
+  transform: translate(200%, 0);
+  opacity: 0;
+  transition: opacity .25s, transform .25s;
+
+  &.current{
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  &.passed{
+    transform: translate(-200%, 0);
+    opacity: 0;
+  }
+}
+.b-calc__item_inside{
+  margin-left: 30px;
+  position: relative;
+}
 .b-calc__item_box{
+
+  &.b-calc__item_box-last{
+    .b-button__box{
+      margin-top: 90px;
+      margin-bottom: 30px;
+
+      .b-button{
+        padding-left: 45px;
+        padding-right: 45px;
+      }
+    }
+  }
+
   h2{
     margin-bottom: 70px;
     font-size: 42px;
     line-height: 50px;
+
+    &.b-calc__item_title{
+      font-size: 25px;
+      line-height: 32px;
+      margin-bottom: 50px;
+    }
+
+    + p{
+      margin-top: -50px;
+      margin-bottom: 50px;
+    }
   }
 
   .b-input{
@@ -322,6 +381,11 @@
       margin-left: -20px;
       top: 0;
       bottom: 0;
+    }
+
+    &.visibility{
+      visibility: hidden;
+      opacity: 0;
     }
 
     &.b-calc__arrows_l{
@@ -364,7 +428,6 @@
     }
   }
 }
-
 .b-calc-other{
   margin-left: 30px;
   margin-bottom: -50px;
@@ -426,5 +489,39 @@
     line-height: 30px;
     margin-bottom: 15px;
     display: block;
+  }
+}
+
+.b-calc-success{
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  font-size: 20px;
+  line-height: 31px;
+
+  .b-calc-success__wrapper{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    padding: 50px;
+    text-align: center;
+  }
+
+  h2{
+    font-size: 61px;
+    line-height: 70px;
+    margin-bottom: 15px;
+    font-family: $fontOpenSans;
+  }
+
+  p{
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .b-button__box{
+    margin-top: 45px;
   }
 }
