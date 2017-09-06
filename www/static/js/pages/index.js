@@ -5,7 +5,7 @@ $(function () {
   var $indexScroll = $('.js-index-scroll');
   var windowHeight = $(window).height();
   var windowWidth = $(window).width();
-  var $body = $('body');
+  var $body = (windowWidth > 1024) ? $('body') : $('body, html');
   var $pageBar = $('.js-page-bar');
   var stateFirst = false;
   var $content = $('.js-content');
@@ -15,6 +15,35 @@ $(function () {
   var $clientSection = $('.js-clients-section');
   var $clientBg = $('.js-clients-bg');
   var heightClientBg = $clientBg.height();
+  var $canvasVideoBox = $('.js-canvas-box');
+
+  var isIOS = /iPad|iPhone|iPod/.test(navigator.platform);
+
+  if (isIOS) {
+    var canvasVideo = new CanvasVideoPlayer({
+      videoSelector: '#indexVideo',
+      canvasSelector: '#canvasVideo',
+      timelineSelector: false,
+      hideVideo: true, // should script hide the video element
+      autoplay: false,
+      makeLoop: true,
+      // IMPORTANT On iOS can't be used together with autoplay, autoplay will be disabled
+      audio: false, // can be true/false (it will use video file for audio), or selector for a separate audio file
+      loop: true,
+      resetOnLastFrame: true
+    });
+    canvasVideo.play();
+  } else {
+    $canvasVideoBox.addClass('hidden');
+  }
+
+  function getSizeCanvas() {
+    $canvasVideoBox.each(function () {
+      var widthCanvas = $('img', $(this)).width();
+      $('.js-canvas', $(this)).css('width', widthCanvas+'px');
+    })
+  }
+  getSizeCanvas();
 
   /**
    * set def animation and box's sizes

@@ -11,8 +11,10 @@
 
     <script src="js/libs/jquery-3.2.1.min.js"></script>
     <script src="js/libs/jquery-ui.js"></script>
+    <script src="js/libs/jquery.ui.touch-punch.min.js"></script>
     <script src="js/libs/phone-mask.js"></script>
     <script src="js/libs/slick.js"></script>
+    <script src="js/libs/canvas-video-player.js"></script>
     <script src="js/common.js"></script>
     <script src="js/pages/calc.js"></script>
     <script src="js/pages/index.js"></script>
@@ -26,6 +28,10 @@
                 <source src="video/index.webm" type="video/webm; codecs=&quot;vp8, vorbis&quot;">
                 <source type="video/mp4" src="video/index.mp4">
             </video>
+            <div class="js-canvas-box b-canvas__box">
+                <img src="i/index/fake-video-1920-1080.gif" alt="">
+                <canvas id="canvasVideo" class="b-canvas js-canvas"></canvas>
+            </div>
         </div>
     </div>
 
@@ -55,7 +61,7 @@
                 <a href="#">О нас</a>
             </li>
             <li>
-                <a href="#">Бриф онлайн</a>
+                <a href="#" class="js-call-calc">Бриф онлайн</a>
             </li>
             <li>
                 <a href="#">Блог</a>
@@ -114,13 +120,13 @@
         <section class="b-index-product__section">
             <div class="b-wrapper">
                 <div class="js-index-product-box u-clear-fix b-index-product__box">
-                    <a href="#" class="js-index-product b-index-product fashion">
+                    <a href="#" class="js-index-product b-index-product advertising">
                         <div class="b-index-product__line b-index-product__line_1"></div>
                         <div class="b-index-product__line b-index-product__line_2"></div>
                         <div class="b-index-product__line b-index-product__line_3"></div>
                         <div class="b-index-product__line b-index-product__line_4"></div>
                         <div class="b-index-product__text">
-                            <h4>Fashion</h4>
+                            <h4>Реклама</h4>
                             <p>Текст который будет описывать данный топик</p>
                         </div>
                     </a>
@@ -140,27 +146,27 @@
                         <div class="b-index-product__line b-index-product__line_3"></div>
                         <div class="b-index-product__line b-index-product__line_4"></div>
                         <div class="b-index-product__text">
-                            <h4>Food</h4>
+                            <h4>Food-съемка</h4>
                             <p>Текст который будет описывать данный топик</p>
                         </div>
                     </a>
-                    <a href="#" class="js-index-product b-index-product long air">
+                    <a href="#" class="js-index-product b-index-product long nocomers">
                         <div class="b-index-product__line b-index-product__line_1"></div>
                         <div class="b-index-product__line b-index-product__line_2"></div>
                         <div class="b-index-product__line b-index-product__line_3"></div>
                         <div class="b-index-product__line b-index-product__line_4"></div>
                         <div class="b-index-product__text">
-                            <h4>АЭРОСЪЕМКА</h4>
+                            <h4>Некоммерческое видео</h4>
                             <p>Текст который будет описывать данный топик</p>
                         </div>
                     </a>
-                    <a href="#" class="js-index-product b-index-product advertising">
+                    <a href="#" class="js-index-product b-index-product fashion">
                         <div class="b-index-product__line b-index-product__line_1"></div>
                         <div class="b-index-product__line b-index-product__line_2"></div>
                         <div class="b-index-product__line b-index-product__line_3"></div>
                         <div class="b-index-product__line b-index-product__line_4"></div>
                         <div class="b-index-product__text">
-                            <h4>Реклама</h4>
+                            <h4>Fashion</h4>
                             <p>Текст который будет описывать данный топик</p>
                         </div>
                     </a>
@@ -170,7 +176,7 @@
                         <div class="b-index-product__line b-index-product__line_3"></div>
                         <div class="b-index-product__line b-index-product__line_4"></div>
                         <div class="b-index-product__text">
-                            <h4>Все Работы</h4>
+                            <h4>Другое</h4>
                             <p>Текст который будет описывать данный топик</p>
                         </div>
                     </a>
@@ -346,6 +352,160 @@
                 <div class="b-button__box">
                     <a href="#" class="js-call-calc-block b-button b-button_white">Заполнить бриф</a>
                     <a href="#" class="js-call-scheme b-button">смотреть этапы работ</a>
+                </div>
+            </div>
+
+            <div class="js-scheme b-scheme__box hidden">
+                <div class="b-button__box">
+                    <a href="#" class="js-sheme-back b-button b-button_back">Назад</a>
+                </div>
+                <div class="b-scheme__overlay">
+                    <div class="b-scheme">
+                        <a href="#" class="js-point b-scheme__point b-scheme__point_bottom main" style="left: 31px; top: 3px;">
+                            <span class="b-scheme__text">
+                                <span>Заполняется клиентом. Содержит краткие пожелания относительно видео.</span>
+                            </span>
+                        </a>
+
+                        <a href="#" class="js-point b-scheme__point b-scheme__point_2 b-scheme__point_bottom" style="left: 156px; top: 172px;">
+                            <span class="b-scheme__text">
+                                <span>Важнейший этап, который определяет каким должно быть готовое видео и включает планирование и подготовку.</span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 190px; top: 267px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Основа будущего видео.
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 190px; top: 347px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Создание синопсиса и сценарного плана.
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 63px; top: 427px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Может осуществляться клиентом самостоятельно, либо командой Shot'n'Cut с последующим согласованием.
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 317px; top: 427px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Поиск и аренда локаций. При необходимости привлечение художника-постановщика.
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 190px; top: 507px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Помимо составления shot-list мы прорисовываем раскадровки на каждый кадр, что помогает на всех последующих этапах. Особенно важны при проектах "под ключ".
+                                </span>
+                            </span>
+                        </a>
+
+                        <a href="#" class="js-point b-scheme__point b-scheme__point_2" style="left: 548px; top: 508px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Все что происходит непосредственно на съемочной площадке в день съемки.
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 452px; top: 601px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Помимо съемочной смены оператора включает в себя работу ассистента и необходимое базовое оборудование (камера, штатив).
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 706px; top: 601px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Работа актеров (профессиональных/непрофессиональных) на съемочной площадке.
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 452px; top: 681px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Системы стабилизации движения в кадре (трех-осевой стабилизатор и слайдер), а также, при необходимости, аренда другого необходимого оборудования. Аэросъемка.
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 706px; top: 681px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Специалист, который корректирует игру актеров (особенно важен при работе с непрофессиональными актерами). Также привлекается стилист и визажист.
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 578px; top: 778px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Студийный искусственный видео-свет, а также, при необходимости, аренда кино-освещения и работа гафера.
+                                </span>
+                            </span>
+                        </a>
+
+                        <a href="#" class="js-point b-scheme__point b-scheme__point_2 b-scheme__point_bottom" style="left: 938px; top: 172px;">
+                            <span class="b-scheme__text">
+                                <span>Завершающий этап</span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 841px; top: 266px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Согласовывается с клиентом.
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 1095px; top: 266px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Цветовая коррекция сырого видео-маетриала согласно задачам ролика.
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 841px; top: 346px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Покупка лицензионного аудиотрека, либо написание индивидуальной дорожки композитором.
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 1095px; top: 346px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Работа с аудиобиблиотеками и интершумом.
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 841px; top: 426px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    При необходимости создание 2D и 3D анимации, рассчитывается индивидуально для каждого ТЗ.
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 1095px; top: 426px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    При необходимости, запись голоса диктора, с предварительным согласованием самого голоса.
+                                </span>
+                            </span>
+                        </a>
+                        <a href="#" class="js-point b-scheme__point" style="left: 1095px; top: 506px;">
+                            <span class="b-scheme__text">
+                                <span>
+                                    Создание текста для диктора по ТЗ.
+                                </span>
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
 

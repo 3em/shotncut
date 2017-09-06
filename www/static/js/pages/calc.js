@@ -61,6 +61,9 @@ $(function () {
   var $calcCall = $('.js-call-calc-block');
   var $popupFirst = $('.js-popup-first');
   var $popupCalc = $('.js-calc-box');
+  var $shemeCall = $('.js-call-scheme');
+  var $shemeBox = $('.js-scheme');
+  var $schemeBack = $('.js-sheme-back');
 
   var currentIndexCalc = 0;
   var DEF_TIME = 10;
@@ -74,6 +77,26 @@ $(function () {
   var dopMontagePrice = 2000;
   var dopColorPrice = 1500;
   var dopSoundPrice = 1000;
+
+  /**
+   * open sheme and close all other window
+   */
+  $shemeCall.on('click', function (e) {
+    e.preventDefault();
+    $popupFirst.addClass('hidden');
+    $successField.addClass('hidden');
+    $popupCalc.addClass('hidden');
+    $shemeBox.removeClass('hidden');
+  });
+
+  /**
+   * back to popup calc from sheme
+   */
+  $schemeBack.on('click', function (e) {
+    e.preventDefault();
+    $shemeBox.addClass('hidden');
+    $popupFirst.removeClass('hidden');
+  });
 
   /**
    * close popup
@@ -491,7 +514,7 @@ $(function () {
    * set popup vals
    */
   function defVals() {
-    var popupHeight = windowHeight - 100;
+    var popupHeight = (windowHeight > 1024) ? windowHeight - 100 : windowHeight;
     $popup.css('height', popupHeight+'px');
   }
   defVals();
@@ -544,10 +567,10 @@ $(function () {
       data: $this.serialize(),
       dataType: "JSON",
       success: function (data) {
-        data.result == 'ok' ? showSuccess() : showSuccess();
+        data.result == 'ok' ? showSuccess() : showError();
       },
       error: function () {
-        showSuccess();
+        showError();
       }
     });
   }
